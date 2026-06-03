@@ -1,12 +1,14 @@
 {
   "name": "btp_be_emp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@cap-js/hana": "^2.8.0",
     "@sap/cds": "^9",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "@sap/hana-client": "^2.28.20",
-    "hdb": "^2.27.1"
+    "@sap/xssec": "^4.13.0",
+    "hdb": "^2.27.1",
+    "password": "^0.1.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2.4",
@@ -22,7 +24,12 @@
         "kind": "hana"
       },
       "auth": {
-        "kind": "dummy"
+        "kind": "basic",
+        "users": {
+          "admin": {
+            "password": "admin"
+          }
+        }
       }
     }
   }

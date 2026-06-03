@@ -1,5 +1,5 @@
 using emp.app as ea from '../db/employee-dbmodel';
-
+@requires:'authenticated-user'
 service EmployeeService {
     @odata.draft.enabled
     entity Employee   as select from ea.EMPLOYEE;
